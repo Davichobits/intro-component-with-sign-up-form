@@ -3,28 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/output.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
 </head>
-<body>
+<body class="
+  bg-[url(/assets/images/bg-intro-mobile.png)]
+  bg-Red
+  font-Poppins
+  flex
+  justify-center
+  text-white
+  ">
+  <section class="
+    w-[327px]
+    mt-[88px]
+    ">
 
-  <section>
+    <h1 class="
+      text-[1.75rem]
+      leading-[2.25rem]
+      text-center
+      font-bold
+      mb-4
+    ">Learn to code by watching others</h1>
 
-    <h1>Learn to code by watching others</h1>
+    <p class="
+      text-center
+      mb-16
+    ">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
 
-    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
-
-    <div>
-      <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+    <div class="
+      bg-Blue
+      rounded-[10px]
+      py-[18px]
+      px-[64px]
+      mb-6
+    ">
+      <p class="text-center">
+        <span class="font-bold">Try it free 7 days</span> then $20/mo. thereafter
+      </p>
     </div>
 
-    <form action="">
-      <input type="text" placeholder="First Name">
-      <input type="text" placeholder="Last Name">
-      <input type="email" placeholder="Email Address">
-      <input type="password" placeholder="Password">
-      <input type="submit" value="Claim your free trial">
-      <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+    <form class="
+      bg-white
+      flex
+      flex-col
+      p-6
+      gap-4
+      rounded-[10px]
+      mb-16
+      shadow-black/15
+      shadow-[0_8px_0_0]
+      " action="">
+      <input class="input" type="text" placeholder="First Name">
+      <input class="input" type="text" placeholder="Last Name">
+      <input class="input" type="email" placeholder="Email Address">
+      <input class="input" type="password" placeholder="Password">
+      <input class="
+        bg-Green 
+        p-4 
+        uppercase 
+        rounded-[5px] 
+        shadow-Shadow-Green
+        shadow-[0_4px_0] 
+        " type="submit" value="Claim your free trial">
+      <p class="
+      text-Grayish-Blue
+        text-[0.6875rem]
+        text-center 
+        font-bold
+        px-5  
+      ">By clicking the button, you are agreeing to our <span class="text-Red">Terms and Services</span></p>
     </form>
 
   </section>
