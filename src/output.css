@@ -190,8 +190,20 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
   .static {
     position: static;
+  }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
+  .right-6 {
+    right: calc(var(--spacing) * 6);
   }
   .mt-\[88px\] {
     margin-top: 88px;
@@ -211,6 +223,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
@@ -225,6 +240,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .place-content-center {
+    place-content: center;
   }
   .justify-center {
     justify-content: center;
@@ -266,9 +284,6 @@
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
-  }
   .px-\[64px\] {
     padding-inline: 64px;
   }
@@ -287,9 +302,6 @@
   .text-\[1\.75rem\] {
     font-size: 1.75rem;
   }
-  .text-\[11px\] {
-    font-size: 11px;
-  }
   .leading-\[2\.25rem\] {
     --tw-leading: 2.25rem;
     line-height: 2.25rem;
@@ -297,9 +309,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .text-Dark-Blue {
-    color: var(--color-Dark-Blue);
   }
   .text-Grayish-Blue {
     color: var(--color-Grayish-Blue);
@@ -324,18 +333,6 @@
     --tw-shadow: 0 8px 0 0 var(--tw-shadow-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-Blue {
-    --tw-shadow-color: color-mix(in srgb, hsl(248, 32%, 49%) var(--tw-shadow-alpha), transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-Blue) var(--tw-shadow-alpha), transparent);
-    }
-  }
-  .shadow-Dark-Blue {
-    --tw-shadow-color: color-mix(in srgb, hsl(249, 10%, 26%) var(--tw-shadow-alpha), transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-Dark-Blue) var(--tw-shadow-alpha), transparent);
-    }
-  }
   .shadow-Shadow-Green {
     --tw-shadow-color: color-mix(in srgb, hsl(153, 57%, 46%) var(--tw-shadow-alpha), transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -348,12 +345,6 @@
       --tw-shadow-color: color-mix(in oklab, var(--color-black) var(--tw-shadow-alpha), transparent);
     }
   }
-  .shadow-black\/5 {
-    --tw-shadow-color: color-mix(in srgb, color-mix(in srgb, #000 5%, transparent) var(--tw-shadow-alpha), transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-black) 5%, transparent) var(--tw-shadow-alpha), transparent);
-    }
-  }
   .shadow-black\/15 {
     --tw-shadow-color: color-mix(in srgb, color-mix(in srgb, #000 15%, transparent) var(--tw-shadow-alpha), transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -363,6 +354,52 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .xl\:flex {
+    @media (width >= 80rem) {
+      display: flex;
+    }
+  }
+  .xl\:w-\[540px\] {
+    @media (width >= 80rem) {
+      width: 540px;
+    }
+  }
+  .xl\:w-\[1100px\] {
+    @media (width >= 80rem) {
+      width: 1100px;
+    }
+  }
+  .xl\:flex-1 {
+    @media (width >= 80rem) {
+      flex: 1;
+    }
+  }
+  .xl\:flex-col {
+    @media (width >= 80rem) {
+      flex-direction: column;
+    }
+  }
+  .xl\:place-content-center {
+    @media (width >= 80rem) {
+      place-content: center;
+    }
+  }
+  .xl\:text-left {
+    @media (width >= 80rem) {
+      text-align: left;
+    }
+  }
+  .xl\:text-\[3\.125rem\] {
+    @media (width >= 80rem) {
+      font-size: 3.125rem;
+    }
+  }
+  .xl\:leading-\[3\.4375rem\] {
+    @media (width >= 80rem) {
+      --tw-leading: 3.4375rem;
+      line-height: 3.4375rem;
+    }
   }
 }
 @font-face {
@@ -374,6 +411,7 @@
 }
 @layer components {
   .input {
+    width: 100%;
     border-radius: 5px;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -384,6 +422,19 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-Dark-Blue);
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .error {
+    margin-top: 6px;
+    text-align: right;
+    font-size: 0.6875rem;
+    color: var(--color-Red);
+  }
+  .border-error {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-Red);
   }
 }
 @property --tw-border-style {
